@@ -1,5 +1,7 @@
 # coding: utf-8
 
+require "json"
+
 Encoding.default_internal = "utf-8"
 
 C_MINUS = "\e[0;31m" # red
@@ -35,6 +37,12 @@ def remove_blank_line(infile, outfile)
   cmd += ' | egrep -v \'^ *$\'' # Remove blank lines
   cmd += " > #{outfile}"
   system cmd
+end
+
+def format_json(infile, outfile)
+  json = File.read(infile)
+  data = JSON.parse(json)
+  File.open(outfile, "wb") { |f| f.print JSON.pretty_generate(data) }
 end
 
 def remove_builtins(lines)
@@ -83,6 +91,9 @@ case type
 when "text", "json"
   remove_blank_line exp, exp_tmp
   remove_blank_line act, act_tmp
+when "json-fmt"
+  format_json exp, exp_tmp
+  format_json act, act_tmp
 when "asm"
   filter_asm exp, exp_tmp
   filter_asm act, act_tmp
