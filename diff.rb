@@ -9,6 +9,10 @@ C_PLUS  = "\e[0;32m" # green
 C_AT    = "\e[0;34m" # blue
 C_RESET = "\e[m"
 
+def file_read(path)
+  File.open(path, "r:utf-8") { |f| f.read }
+end
+
 def diff(path_exp, path_act)
   out = `diff -u #{path_exp} #{path_act}`
 
@@ -40,7 +44,7 @@ def remove_blank_line(infile, outfile)
 end
 
 def format_json(infile, outfile)
-  json = File.read(infile)
+  json = file_read(infile)
   data = JSON.parse(json)
   File.open(outfile, "wb") { |f| f.print JSON.pretty_generate(data) }
 end
@@ -67,7 +71,7 @@ end
 
 def filter_asm(infile, outfile)
   lines =
-    remove_builtins(File.open(infile, "r:utf-8").each_line)
+    remove_builtins(file_read(infile).each_line)
     .map do |line|
       if /^(.+?) *# .*$/ =~ line
         $1 + "\n"
