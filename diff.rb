@@ -2,6 +2,7 @@
 
 require "json"
 
+Encoding.default_external = "utf-8"
 Encoding.default_internal = "utf-8"
 
 C_MINUS = "\e[0;31m" # red
@@ -10,7 +11,7 @@ C_AT    = "\e[0;34m" # blue
 C_RESET = "\e[m"
 
 def file_read(path)
-  File.open(path, "r:utf-8") { |f| f.read }
+  File.open(path) { |f| f.read }
 end
 
 def diff(path_exp, path_act)
