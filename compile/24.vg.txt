@@ -1,12 +1,15 @@
 // -*- mode: javascript -*-
 
-func f1() {
-  return 42;
+func sub(a) {
+  // 関数の引数をローカル変数に代入
+  var b;
+  set b = a;
+
+  // ローカル変数をローカル変数に代入
+  var c;
+  set c = b;
 }
 
 func main() {
-  var a;
-  var b;
-  call_set a = f1();
-  call_set b = f1();
+  call sub(1);
 }
