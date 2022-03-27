@@ -46,8 +46,13 @@ end
 
 def format_json(infile, outfile)
   json = file_read(infile)
-  data = JSON.parse(json)
-  File.open(outfile, "wb") { |f| f.print JSON.pretty_generate(data) }
+  begin
+    data = JSON.parse(json)
+    File.open(outfile, "wb") { |f| f.print JSON.pretty_generate(data) }
+  rescue JSON::ParserError => e
+    $stderr.puts "failed to parse (#{json.inspect})"
+    raise e
+  end
 end
 
 def remove_builtins(lines)
