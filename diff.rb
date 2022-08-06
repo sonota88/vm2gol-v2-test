@@ -50,7 +50,9 @@ def format_json(infile, outfile)
     data = JSON.parse(json)
     File.open(outfile, "wb") { |f| f.print JSON.pretty_generate(data) }
   rescue JSON::ParserError => e
-    $stderr.puts "failed to parse (#{json.inspect})"
+    $stderr.puts "failed to parse JSON:"
+    $stderr.print json.gsub("\n", "(LF)\n")
+    $stderr.print "(EOF)\n"
     raise e
   end
 end
