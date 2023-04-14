@@ -3,7 +3,7 @@
 label main
   push bp
   cp sp bp
-  sub_sp 1
+  add_sp -1
   cp 0 reg_a
   cp reg_a [bp:-1]
 

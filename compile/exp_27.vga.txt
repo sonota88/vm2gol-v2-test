@@ -4,7 +4,7 @@
 label to_vi
   push bp
   cp sp bp
-  sub_sp 1
+  add_sp -1
   cp [bp:4] reg_a
   push reg_a
   cp [bp:2] reg_a
@@ -33,7 +33,7 @@ label to_vi
 label vram_set
   push bp
   cp sp bp
-  sub_sp 1
+  add_sp -1
   cp 0 reg_a
   push reg_a
   cp [bp:4] reg_a
@@ -60,7 +60,7 @@ label vram_set
 label vram_set_buf
   push bp
   cp sp bp
-  sub_sp 1
+  add_sp -1
   cp 25 reg_a
   push reg_a
   cp [bp:4] reg_a
@@ -87,8 +87,8 @@ label vram_set_buf
 label vram_get
   push bp
   cp sp bp
-  sub_sp 1
-  sub_sp 1
+  add_sp -1
+  add_sp -1
   cp 0 reg_a
   push reg_a
   cp [bp:4] reg_a
@@ -115,7 +115,7 @@ label vram_get
 label adjust_index
   push bp
   cp sp bp
-  sub_sp 1
+  add_sp -1
 
   # -->> case_1
   cp [bp:3] reg_a
@@ -197,7 +197,7 @@ label end_case_1
 label calc_next_gen
   push bp
   cp sp bp
-  sub_sp 1
+  add_sp -1
   cp 0 reg_a
   cp reg_a [bp:-1]
 
@@ -316,10 +316,10 @@ label end_case_5
 label count_alive
   push bp
   cp sp bp
-  sub_sp 1
+  add_sp -1
   cp 0 reg_a
   cp reg_a [bp:-1]
-  sub_sp 1
+  add_sp -1
   cp [bp:4] reg_a
   push reg_a
   cp -1 reg_a
@@ -328,7 +328,7 @@ label count_alive
   pop reg_a
   add_ab
   cp reg_a [bp:-2]
-  sub_sp 1
+  add_sp -1
   cp [bp:4] reg_a
   push reg_a
   cp 1 reg_a
@@ -337,7 +337,7 @@ label count_alive
   pop reg_a
   add_ab
   cp reg_a [bp:-3]
-  sub_sp 1
+  add_sp -1
   cp [bp:5] reg_a
   push reg_a
   cp -1 reg_a
@@ -346,7 +346,7 @@ label count_alive
   pop reg_a
   add_ab
   cp reg_a [bp:-4]
-  sub_sp 1
+  add_sp -1
   cp [bp:5] reg_a
   push reg_a
   cp 1 reg_a
@@ -396,7 +396,7 @@ label count_alive
   cp reg_a [bp:-5]
   _cmt yb~の補正の直後
   _cmt 座標補正の直後
-  sub_sp 1
+  add_sp -1
   _cmt 左上
   cp [bp:-4] reg_a
   push reg_a
@@ -558,15 +558,15 @@ label count_alive
 label make_next_gen
   push bp
   cp sp bp
-  sub_sp 1
+  add_sp -1
   cp 0 reg_a
   cp reg_a [bp:-1]
-  sub_sp 1
+  add_sp -1
   cp 0 reg_a
   cp reg_a [bp:-2]
-  sub_sp 1
-  sub_sp 1
-  sub_sp 1
+  add_sp -1
+  add_sp -1
+  add_sp -1
 
 label while_13
   cp [bp:-2] reg_a
@@ -679,11 +679,11 @@ label end_while_13
 label replace_with_buf
   push bp
   cp sp bp
-  sub_sp 1
+  add_sp -1
   cp 0 reg_a
   cp reg_a [bp:-1]
-  sub_sp 1
-  sub_sp 1
+  add_sp -1
+  add_sp -1
 
 label while_17
   cp [bp:-1] reg_a
@@ -741,10 +741,10 @@ label end_while_17
 label main
   push bp
   cp sp bp
-  sub_sp 1
+  add_sp -1
   cp 5 reg_a
   cp reg_a [bp:-1]
-  sub_sp 1
+  add_sp -1
   cp 5 reg_a
   cp reg_a [bp:-2]
   cp 1 reg_a
@@ -802,10 +802,10 @@ label main
   _cmt call~~vram_set
   call vram_set
   add_sp 4
-  sub_sp 1
+  add_sp -1
   cp 0 reg_a
   cp reg_a [bp:-3]
-  sub_sp 1
+  add_sp -1
   cp 1 reg_a
   cp reg_a [bp:-4]
 

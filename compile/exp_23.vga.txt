@@ -9,7 +9,7 @@ label f2
 label f1
   push bp
   cp sp bp
-  sub_sp 1
+  add_sp -1
   cp 1 reg_a
   cp reg_a [bp:-1]
   cp [bp:-1] reg_a
