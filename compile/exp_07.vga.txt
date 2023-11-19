@@ -3,23 +3,23 @@
 
 label sub
   push bp
-  mov sp bp
+  mov bp sp
 
   # 関数の処理本体
 
-  mov bp sp
+  mov sp bp
   pop bp
   ret
 
 label main
   push bp
-  mov sp bp
+  mov bp sp
 
   # 関数の処理本体
   _cmt call~~sub
   call sub
   add_sp 0
 
-  mov bp sp
+  mov sp bp
   pop bp
   ret

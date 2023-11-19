@@ -3,11 +3,11 @@
 
 label main
   push bp
-  mov sp bp
+  mov bp sp
 
   # 関数の処理本体
   _cmt vm~comment
 
-  mov bp sp
+  mov sp bp
   pop bp
   ret

@@ -3,25 +3,43 @@
 
 label main
   push bp
-  mov sp bp
+  mov bp sp
 
   # 関数の処理本体
   add_sp -1
-  mov 2 reg_a
+  mov reg_a 2
   push reg_a
-  mov 3 reg_a
+  mov reg_a 3
   push reg_a
   pop reg_b
   pop reg_a
   compare
   jump_eq then_1
-  mov 0 reg_a
+  mov reg_a 0
   jump end_eq_1
 label then_1
-  mov 1 reg_a
+  mov reg_a 1
 label end_eq_1
-  mov reg_a [bp:-1]
+  mov [bp:-1] reg_a
 
-  mov bp sp
+  mov sp bp
   pop bp
   ret
+#>builtins
+
+label set_vram
+  push bp
+  mov bp sp
+  set_vram [bp:2] [bp:3]
+  mov sp bp
+  pop bp
+  ret
+
+label get_vram
+  push bp
+  mov bp sp
+  get_vram [bp:2] reg_a
+  mov sp bp
+  pop bp
+  ret
+#<builtins
