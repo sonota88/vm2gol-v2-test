@@ -2,22 +2,22 @@
   exit
 label main
   push bp
-  cp sp bp
+  mov sp bp
   add_sp -1
-  cp 1 reg_a
+  mov 1 reg_a
   push reg_a
-  cp 2 reg_a
-  push reg_a
-  pop reg_b
-  pop reg_a
-  add_ab
-  push reg_a
-  cp 3 reg_a
+  mov 2 reg_a
   push reg_a
   pop reg_b
   pop reg_a
   add_ab
-  cp reg_a [bp:-1]
-  cp bp sp
+  push reg_a
+  mov 3 reg_a
+  push reg_a
+  pop reg_b
+  pop reg_a
+  add_ab
+  mov reg_a [bp:-1]
+  mov bp sp
   pop bp
   ret

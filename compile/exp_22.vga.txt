@@ -3,12 +3,12 @@
 
 label main
   push bp
-  cp sp bp
+  mov sp bp
 
-  cp 2 reg_a
+  mov 2 reg_a
   push reg_a
 
-  cp 3 reg_a
+  mov 3 reg_a
   push reg_a
 
   pop reg_b
@@ -17,17 +17,17 @@ label main
 
   push reg_a
 
-  cp 4 reg_a
+  mov 4 reg_a
   push reg_a
 
   pop reg_b
   pop reg_a
   mult_ab
 
-  cp bp sp
+  mov bp sp
   pop bp
   ret
 
-  cp bp sp
+  mov bp sp
   pop bp
   ret

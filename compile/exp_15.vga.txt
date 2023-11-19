@@ -3,43 +3,43 @@
 
 label add
   push bp
-  cp sp bp
+  mov sp bp
 
   # 関数の処理本体
   add_sp -1
-  cp [bp:2] reg_a
+  mov [bp:2] reg_a
   push reg_a
-  cp [bp:3] reg_a
+  mov [bp:3] reg_a
   push reg_a
   pop reg_b
   pop reg_a
   add_ab
-  cp reg_a [bp:-1]
-  cp [bp:-1] reg_a
+  mov reg_a [bp:-1]
+  mov [bp:-1] reg_a
 
-  cp bp sp
+  mov bp sp
   pop bp
   ret
 
-  cp bp sp
+  mov bp sp
   pop bp
   ret
 
 label main
   push bp
-  cp sp bp
+  mov sp bp
 
   # 関数の処理本体
   add_sp -1
-  cp 2 reg_a
+  mov 2 reg_a
   push reg_a
-  cp 1 reg_a
+  mov 1 reg_a
   push reg_a
   _cmt call~~add
   call add
   add_sp 2
-  cp reg_a [bp:-1]
+  mov reg_a [bp:-1]
 
-  cp bp sp
+  mov bp sp
   pop bp
   ret

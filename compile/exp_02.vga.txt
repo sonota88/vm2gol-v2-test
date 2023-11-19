@@ -3,10 +3,10 @@
 
 label main
   push bp
-  cp sp bp
+  mov sp bp
 
   # 関数の処理本体
 
-  cp bp sp
+  mov bp sp
   pop bp
   ret

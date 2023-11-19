@@ -3,29 +3,29 @@
 
 label sub
   push bp
-  cp sp bp
+  mov sp bp
 
   # 関数の処理本体
 
-  cp bp sp
+  mov bp sp
   pop bp
   ret
 
 label main
   push bp
-  cp sp bp
+  mov sp bp
 
   # 関数の処理本体
-  cp 3 reg_a
+  mov 3 reg_a
   push reg_a
-  cp 2 reg_a
+  mov 2 reg_a
   push reg_a
-  cp 1 reg_a
+  mov 1 reg_a
   push reg_a
   _cmt call~~sub
   call sub
   add_sp 3
 
-  cp bp sp
+  mov bp sp
   pop bp
   ret

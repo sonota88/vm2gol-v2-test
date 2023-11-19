@@ -3,25 +3,25 @@
 
 label sub
   push bp
-  cp sp bp
+  mov sp bp
   add_sp -1
-  cp [bp:2] reg_a
-  cp reg_a [bp:-1]
+  mov [bp:2] reg_a
+  mov reg_a [bp:-1]
   add_sp -1
-  cp [bp:-1] reg_a
-  cp reg_a [bp:-2]
-  cp bp sp
+  mov [bp:-1] reg_a
+  mov reg_a [bp:-2]
+  mov bp sp
   pop bp
   ret
 
 label main
   push bp
-  cp sp bp
-  cp 1 reg_a
+  mov sp bp
+  mov 1 reg_a
   push reg_a
   _cmt call~~sub
   call sub
   add_sp 1
-  cp bp sp
+  mov bp sp
   pop bp
   ret
