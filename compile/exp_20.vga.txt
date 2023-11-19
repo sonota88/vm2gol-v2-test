@@ -13,13 +13,13 @@ label main
   push reg_a
   pop reg_b
   pop reg_a
-  add_ab
+  add
   push reg_a
   mov reg_a 3
   push reg_a
   pop reg_b
   pop reg_a
-  add_ab
+  add
   mov [bp:-1] reg_a
 
   mov sp bp
