@@ -24,7 +24,7 @@ label main
   push reg_a
   _cmt call~~sub
   call sub
-  add_sp 3
+  add sp 3
 
   mov sp bp
   pop bp

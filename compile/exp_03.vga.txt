@@ -6,8 +6,26 @@ label main
   mov bp sp
 
   # 関数の処理本体
-  add_sp -1
+  add sp -1
 
   mov sp bp
   pop bp
   ret
+#>builtins
+
+label set_vram
+  push bp
+  mov bp sp
+  set_vram [bp:2] [bp:3]
+  mov sp bp
+  pop bp
+  ret
+
+label get_vram
+  push bp
+  mov bp sp
+  get_vram [bp:2] reg_a
+  mov sp bp
+  pop bp
+  ret
+#<builtins

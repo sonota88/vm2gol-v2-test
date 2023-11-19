@@ -6,10 +6,10 @@ label sub
   mov bp sp
 
   # 関数の処理本体
-  add_sp -1
+  add sp -1
   mov reg_a [bp:2]
   mov [bp:-1] reg_a
-  add_sp -1
+  add sp -1
   mov reg_a [bp:-1]
   mov [bp:-2] reg_a
 
@@ -26,7 +26,7 @@ label main
   push reg_a
   _cmt call~~sub
   call sub
-  add_sp 1
+  add sp 1
 
   mov sp bp
   pop bp
