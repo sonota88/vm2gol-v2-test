@@ -13,7 +13,7 @@ label main
   push reg_a
   pop reg_b
   pop reg_a
-  mult_ab
+  mul
   mov [bp:-1] reg_a
   mov reg_a 4
   push reg_a
