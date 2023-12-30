@@ -148,7 +148,7 @@ label adjust_index
   compare
   jump_eq then_2
   mov reg_a 0
-  jump end_eq_2
+  jmp end_eq_2
 label then_2
   mov reg_a 1
 label end_eq_2
@@ -164,7 +164,7 @@ label end_eq_2
   pop reg_a
   add reg_a reg_b
   mov [bp:-1] reg_a
-  jump end_case_1
+  jmp end_case_1
 label end_when_1_0
   # 条件 1_1: ["==", "i", "width"]
   mov reg_a [bp:3]
@@ -176,7 +176,7 @@ label end_when_1_0
   compare
   jump_eq then_3
   mov reg_a 0
-  jump end_eq_3
+  jmp end_eq_3
 label then_3
   mov reg_a 1
 label end_eq_3
@@ -186,7 +186,7 @@ label end_eq_3
   _cmt 上限を超えた場合
   mov reg_a 0
   mov [bp:-1] reg_a
-  jump end_case_1
+  jmp end_case_1
 label end_when_1_1
   # 条件 1_2: ["==", 1, 1]
   mov reg_a 1
@@ -198,7 +198,7 @@ label end_when_1_1
   compare
   jump_eq then_4
   mov reg_a 0
-  jump end_eq_4
+  jmp end_eq_4
 label then_4
   mov reg_a 1
 label end_eq_4
@@ -208,7 +208,7 @@ label end_eq_4
   _cmt 補正が不要な場合
   mov reg_a [bp:3]
   mov [bp:-1] reg_a
-  jump end_case_1
+  jmp end_case_1
 label end_when_1_2
 label end_case_1
   mov reg_a [bp:-1]
@@ -239,7 +239,7 @@ label calc_next_gen
   compare
   jump_eq then_6
   mov reg_a 0
-  jump end_eq_6
+  jmp end_eq_6
 label then_6
   mov reg_a 1
 label end_eq_6
@@ -256,7 +256,7 @@ label end_eq_6
   compare
   jump_eq then_8
   mov reg_a 0
-  jump end_eq_8
+  jmp end_eq_8
 label then_8
   mov reg_a 1
 label end_eq_8
@@ -265,10 +265,10 @@ label end_eq_8
   jump_eq end_when_7_0
   mov reg_a 1
   mov [bp:-1] reg_a
-  jump end_case_7
+  jmp end_case_7
 label end_when_7_0
 label end_case_7
-  jump end_case_5
+  jmp end_case_5
 label end_when_5_0
   # 条件 5_1: ["==", 0, 0]
   mov reg_a 0
@@ -280,7 +280,7 @@ label end_when_5_0
   compare
   jump_eq then_9
   mov reg_a 0
-  jump end_eq_9
+  jmp end_eq_9
 label then_9
   mov reg_a 1
 label end_eq_9
@@ -297,7 +297,7 @@ label end_eq_9
   compare
   jump_eq then_11
   mov reg_a 0
-  jump end_eq_11
+  jmp end_eq_11
 label then_11
   mov reg_a 1
 label end_eq_11
@@ -306,7 +306,7 @@ label end_eq_11
   jump_eq end_when_10_0
   mov reg_a 1
   mov [bp:-1] reg_a
-  jump end_case_10
+  jmp end_case_10
 label end_when_10_0
   # 条件 10_1: ["==", "count", 3]
   mov reg_a [bp:3]
@@ -318,7 +318,7 @@ label end_when_10_0
   compare
   jump_eq then_12
   mov reg_a 0
-  jump end_eq_12
+  jmp end_eq_12
 label then_12
   mov reg_a 1
 label end_eq_12
@@ -327,10 +327,10 @@ label end_eq_12
   jump_eq end_when_10_1
   mov reg_a 1
   mov [bp:-1] reg_a
-  jump end_case_10
+  jmp end_case_10
 label end_when_10_1
 label end_case_10
-  jump end_case_5
+  jmp end_case_5
 label end_when_5_1
 label end_case_5
   mov reg_a [bp:-1]
@@ -617,7 +617,7 @@ label while_13
   compare
   jump_eq then_14
   mov reg_a 1
-  jump end_neq_14
+  jmp end_neq_14
 label then_14
   mov reg_a 0
 label end_neq_14
@@ -637,7 +637,7 @@ label while_15
   compare
   jump_eq then_16
   mov reg_a 1
-  jump end_neq_16
+  jmp end_neq_16
 label then_16
   mov reg_a 0
 label end_neq_16
@@ -697,7 +697,7 @@ label end_neq_16
   pop reg_a
   add reg_a reg_b
   mov [bp:-1] reg_a
-  jump while_15
+  jmp while_15
 label end_while_15
 
   mov reg_a [bp:-2]
@@ -708,7 +708,7 @@ label end_while_15
   pop reg_a
   add reg_a reg_b
   mov [bp:-2] reg_a
-  jump while_13
+  jmp while_13
 label end_while_13
 
 
@@ -737,7 +737,7 @@ label while_17
   compare
   jump_eq then_18
   mov reg_a 1
-  jump end_neq_18
+  jmp end_neq_18
 label then_18
   mov reg_a 0
 label end_neq_18
@@ -773,7 +773,7 @@ label end_neq_18
   pop reg_a
   add reg_a reg_b
   mov [bp:-1] reg_a
-  jump while_17
+  jmp while_17
 label end_while_17
 
 
@@ -864,7 +864,7 @@ label while_19
   compare
   jump_eq then_20
   mov reg_a 1
-  jump end_neq_20
+  jmp end_neq_20
 label then_20
   mov reg_a 0
 label end_neq_20
@@ -889,7 +889,7 @@ label end_neq_20
   pop reg_a
   add reg_a reg_b
   mov [bp:-4] reg_a
-  jump while_19
+  jmp while_19
 label end_while_19
 
 

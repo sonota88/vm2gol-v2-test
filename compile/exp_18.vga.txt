@@ -20,7 +20,7 @@ label while_1
   compare
   jump_eq then_2
   mov reg_a 0
-  jump end_eq_2
+  jmp end_eq_2
 label then_2
   mov reg_a 1
 label end_eq_2
@@ -29,7 +29,7 @@ label end_eq_2
   jump_eq end_while_1
   mov reg_a 1
   mov [bp:-1] reg_a
-  jump while_1
+  jmp while_1
 label end_while_1
 
 
