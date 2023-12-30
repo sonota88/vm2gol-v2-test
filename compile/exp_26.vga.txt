@@ -17,7 +17,7 @@ label while_1
   push reg_a
   pop reg_b
   pop reg_a
-  compare
+  cmp
   je then_2
   mov reg_a 0
   jmp end_eq_2
@@ -25,7 +25,7 @@ label then_2
   mov reg_a 1
 label end_eq_2
   mov reg_b 0
-  compare
+  cmp
   je end_while_1
   mov reg_a [bp:-1]
   push reg_a

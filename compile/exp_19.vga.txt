@@ -16,7 +16,7 @@ label main
   push reg_a
   pop reg_b
   pop reg_a
-  compare
+  cmp
   je then_2
   mov reg_a 0
   jmp end_eq_2
@@ -24,7 +24,7 @@ label then_2
   mov reg_a 1
 label end_eq_2
   mov reg_b 0
-  compare
+  cmp
   je end_when_1_0
   mov reg_a 0
   mov [bp:-1] reg_a
@@ -37,7 +37,7 @@ label end_when_1_0
   push reg_a
   pop reg_b
   pop reg_a
-  compare
+  cmp
   je then_3
   mov reg_a 0
   jmp end_eq_3
@@ -45,7 +45,7 @@ label then_3
   mov reg_a 1
 label end_eq_3
   mov reg_b 0
-  compare
+  cmp
   je end_when_1_1
   mov reg_a 1
   mov [bp:-1] reg_a
