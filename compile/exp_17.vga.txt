@@ -14,7 +14,7 @@ label main
   pop reg_b
   pop reg_a
   compare
-  jump_eq then_1
+  je then_1
   mov reg_a 0
   jmp end_eq_1
 label then_1
